@@ -55,14 +55,15 @@ def execmd(cmd, timeout):
     t_beginning = time.time()
     seconds_passed = 0
     retV = None
+    pid = proc.pid
     while True:
         if proc.poll() is not None:
             retV = proc.communicate()[0]
             break
         seconds_passed = time.time() - t_beginning
         if timeout and seconds_passed > timeout:
-            os.killpg(proc.pid, signal.SIGTERM)
-            return (1,"Excuting commad [%s] timeout" % cmd)
+            retV = proc.communicate()[0]
+            return (1, retV+"\nExcuting commad [%s] timeout" % cmd)
         time.sleep(0.1)
     return (0, retV)
  
