@@ -1,0 +1,59 @@
+# ------------------------------------------------
+# Case Name:
+#       case_rfc2616_response-extHead-single-longName
+# Case Description:
+#       cache MUST cache single-valued extension response header with long name
+# Testing Steps:
+#       step 1: request long name extension response header
+#       step 2: check whether the response be cached
+# Author: qihai.qh@alibaba-inc.com
+# -----------------------------------------------
+# step 1: request long name extension response header
+--- {
+    Request: {
+        method: GET,
+        uri: '/extHead-single-longName',
+        protocol: HTTP/1.1,
+        Connection: close,
+        Host: "macaroon.zymlinux.net",
+    },
+    ServerCheck: {
+        method: GET,
+        uri: '/extHead-single-longName',
+        protocol: HTTP/1.1,
+        Host: "macaroon.zymlinux.net",
+    },
+    Response: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: '123',
+        Last-Modified: now-31536000,
+        Connection: close,
+        body: body-ext,
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Last-Modified: now-31536000,
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: '123',
+        Connection: close,
+        body: body-ext,
+    }
+}
+
+#step 2: check whether the response be cached
+--- {
+     Request: {
+        uri: '/extHead-single-longName',
+        Host: "macaroon.zymlinux.net",
+        Connection: close,
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Last-Modified: now-31536000,
+        Date: S_Date_Step1,
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: '123',
+        body: body-ext,
+    }
+}

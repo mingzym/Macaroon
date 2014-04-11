@@ -1,0 +1,59 @@
+# ------------------------------------------------
+# Case Name:
+#       case_rfc2616_response-contentLanguageHead-multi-6Values
+# Case Description:
+#       cache MUST cache all values of a multi-valued Allow response header with 6 values
+# Testing Steps:
+#       step 1: request 6 values Allow response header
+#       step 2: check whether the response be cached
+# Author: qihai.qh@alibaba-inc.com
+# -----------------------------------------------
+# step 1: request 6 values Allow response header
+--- {
+    Request: {
+        method: GET,
+        uri: '/contentLanguageHead-multi-6Values',
+        protocol: HTTP/1.1,
+        Connection: close,
+        Host: "macaroon.zymlinux.net",
+    },
+    ServerCheck: {
+        method: GET,
+        uri: '/contentLanguageHead-multi-6Values',
+        protocol: HTTP/1.1,
+        Host: "macaroon.zymlinux.net",
+    },
+    Response: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Content-Language: 'en,mi,ch,ja,us,fr',
+        Last-Modified: now-31536000,
+        Connection: close,
+        body: body-cl,
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Last-Modified: now-31536000,
+        Content-Language: 'en,mi,ch,ja,us,fr',
+        Connection: close,
+        body: body-cl,
+    }
+}
+
+#step 2: check whether the response be cached
+--- {
+     Request: {
+        uri: '/contentLanguageHead-multi-6Values',
+        Host: "macaroon.zymlinux.net",
+        Connection: close,
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Last-Modified: now-31536000,
+        Date: S_Date_Step1,
+        Content-Language: 'en,mi,ch,ja,us,fr',
+        body: body-cl,
+    }
+}

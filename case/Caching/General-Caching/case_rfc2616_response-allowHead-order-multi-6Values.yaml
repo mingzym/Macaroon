@@ -1,0 +1,42 @@
+# ------------------------------------------------
+# Case Name:
+#       case_rfc2616_response-allowHead-order-multi-6Values
+# Case Description:
+#       cache MUST preserve field-value order when caching multi-valued Allow response header with 6 values
+# Testing Steps:
+#       step 1: request 6 values Allow response header
+# Author: qihai.qh@alibaba-inc.com
+# -----------------------------------------------
+# step 1: preserve field-value order when caching multi-valued Allow response header with 6 values
+--- {
+    Request: {
+        method: GET,
+        uri: '/allowHead-order-multi-6Values',
+        protocol: HTTP/1.1,
+        Connection: close,
+        Host: "macaroon.zymlinux.net",
+    },
+    ServerCheck: {
+        method: GET,
+        uri: '/allowHead-order-multi-6Values',
+        protocol: HTTP/1.1,
+        Host: "macaroon.zymlinux.net",
+    },
+    Response: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Allow: 'GET,HEAD,PUT,POST,PURGE,DELETE',
+        Last-Modified: now-31536000,
+        Connection: close,
+        body: body-allow,
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Last-Modified: now-31536000,
+        Allow: 'GET,HEAD,PUT,POST,PURGE,DELETE',
+        Connection: close,
+        body: body-allow,
+    }
+}
+

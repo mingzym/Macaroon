@@ -1,0 +1,42 @@
+# ------------------------------------------------
+# Case Name:
+#       case_rfc2616_response-contentLanguageHead-order-multi-6Values
+# Case Description:
+#       cache MUST preserve field-value order when caching multi-valued Content-Language response header with 6 values
+# Testing Steps:
+#       step 1: preserve field-value order when caching multi-valued Content-Language response header with 6 values
+# Author: qihai.qh@alibaba-inc.com
+# -----------------------------------------------
+# step 1: preserve field-value order when caching multi-valued Content-Language response header with 6 values
+--- {
+    Request: {
+        method: GET,
+        uri: '/contentLanguageHead-order-multi-6Values',
+        protocol: HTTP/1.1,
+        Connection: close,
+        Host: "macaroon.zymlinux.net",
+    },
+    ServerCheck: {
+        method: GET,
+        uri: '/contentLanguageHead-order-multi-6Values',
+        protocol: HTTP/1.1,
+        Host: "macaroon.zymlinux.net",
+    },
+    Response: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Content-Language: 'en,mi,ch,ja,us,fr',
+        Last-Modified: now-31536000,
+        Connection: close,
+        body: body-cl,
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Last-Modified: now-31536000,
+        Content-Language: 'en,mi,ch,ja,us,fr',
+        Connection: close,
+        body: body-cl,
+    }
+}
+
