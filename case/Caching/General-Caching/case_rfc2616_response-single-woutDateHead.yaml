@@ -1,0 +1,52 @@
+# ------------------------------------------------
+# Case Name:
+#       case_rfc2616_response-single-woutDateHead
+# Case Description:
+#       cache MUST cache single-valued plain warning without Date response header
+# Testing Steps:
+#       step 1: request without Date response header
+#       step 2: check whether the response be cached
+# Author: qihai.qh@alibaba-inc.com
+# -----------------------------------------------
+# step 1: request without Date response header
+--- {
+    Request: {
+        method: GET,
+        uri: '/single-woutDateHead',
+        protocol: HTTP/1.1,
+        Connection: close,
+        Host: "macaroon.zymlinux.net",
+    },
+    ServerCheck: {
+        method: GET,
+        uri: '/single-woutDateHead',
+        protocol: HTTP/1.1,
+        Host: "macaroon.zymlinux.net",
+    },
+    Response: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Connection: close,
+        body: body-nodate,
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Connection: close,
+        body: body-nodate,
+    }
+}
+
+#step 2: check whether the response be cached
+--- {
+     Request: {
+        uri: '/single-woutDateHead',
+        Host: "macaroon.zymlinux.net",
+        Connection: close,
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        body: body-nodate,
+    }
+}

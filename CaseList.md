@@ -106,6 +106,40 @@
 1. `case_rfc2616_authorization-s-maxage=0-cacheRefresh.yaml`
     > a Authorization and  s-maxage=0 request make cache refresh
 
+###Expires-Header
+1. `case_rfc2616_expires-value-0blankQuoted.yaml`
+    > expires value blank 0
+
+2. `case_rfc2616_expires-value-0onlyQuoted.yaml`
+    > expires equal zero english quoted
+
+3. `case_rfc2616_expires-value-1DigitYear.yaml`
+    >  expires value in 1digit year
+
+4. `case_rfc2616_expires-value-empty.yaml`
+    > expires value value empty
+
+5. `case_rfc2616_expires-value-httpdlike.yaml`
+    > expires value in apache httpd like date
+
+6. `case_rfc2616_expires-value-longMonth.yaml`
+    > expires value long month
+
+7. `case_rfc2616_expires-value-negativeYear.yaml`
+    > expires value in negative year
+
+8. `case_rfc2616_expires-value-RFC850.yaml`
+    > expires value in RFC850 format
+
+9. `case_rfc2616_expires-value-RFC1123.yaml`
+    > expires value in RFC1123 format
+
+10. `case_rfc2616_expires-value-xxxMonth.yaml`
+    > expires value xxx month
+
+11. `case_rfc2616_expires-value-yesterdayString.yaml`
+    > expires value yesterday string
+
 ###General-Caching
 1. `case_rfc2616_bodyIncomplete-noCached.yaml`
     > bodysize less than content-length, dont't cache
@@ -115,6 +149,78 @@
 
 3. `case_rfc2616_treat-query-URIs-stale-without-Expires.yaml`
     > cache MUST treat response to query URIs be stale if there is no Expires header in
+
+4. `case_rfc2616_response-allowHead-multi-6Values.yaml`
+    > cache MUST cache all values of a multi-valued Allow response header with 6 values
+
+5. `case_rfc2616_response-allowHead-order-multi-6Values.yaml`
+    > cache MUST preserve field-value order when caching multi-valued Allow response header with 6 values
+
+6. `case_rfc2616_response-contentLanguageHead-multi-6Values.yaml`
+    > cache MUST cache all values of a multi-valued Allow response header with 6 values
+
+7. `case_rfc2616_response-contentLanguageHead-order-multi-6Values.yaml`
+    > cache MUST preserve field-value order when caching multi-valued Content-Language response header with 6 values
+
+8. `case_rfc2616_response-extHead-single-2LineSpace.yaml`
+    > cache MUST cache single-valued 2-line spaced extension response header
+
+9. `case_rfc2616_response-extHead-single-2LineTabbed.yaml`
+    > cache MUST cache single-valued 2-line tabbed extension response header
+
+10. `case_rfc2616_response-extHead-single-18LineTabbed.yaml`
+    > cache MUST cache single-valued 18-line tabbed extension response header
+
+11. `case_rfc2616_response-extHead-single-19LineSpace.yaml`
+    > cache MUST cache single-valued 19-line spaced extension response header
+
+12. `case_rfc2616_response-extHead-single-absentVal.yaml`
+    > cache MUST cache single-valued extension response header with absent value
+
+13. `case_rfc2616_response-extHead-single-longName.yaml`
+    > cache MUST cache single-valued extension response header with long name
+
+14. `case_rfc2616_response-extHead-single-longVal.yaml`
+    > cache MUST cache single-valued extension response header with long value
+
+15. `case_rfc2616_response-extHead-single-namedDot.yaml`
+    > cache MUST cache single-valued extension response header named dot
+
+16. `case_rfc2616_response-extHead-single-plainVal.yaml`
+    > cache MUST cache single-valued extension response header with plain value
+
+17. `case_rfc2616_response-pragmaHead-multi-7Values.yaml`
+    > cache MUST cache all values of a multi-valued Pragma response header with 7 values
+
+18. `case_rfc2616_response-pragmaHead-order-multi-7Values.yaml`
+    > cache MUST preserve field-value order when caching multi-valued Pragma response header with 7 values
+
+19. `case_rfc2616_response-serverHead-single-2LineSpace.yaml`
+    > cache MUST cache single-valued 2-line spaced Server response header
+
+20. `case_rfc2616_response-serverHead-single-2LineTabbed.yaml`
+    > cache MUST cache single-valued 2-line tabbed Server response header
+
+21. `case_rfc2616_response-serverHead-single-18LineTabbed.yaml`
+    > cache MUST cache single-valued 18-line tabbed Server response header
+
+22. `case_rfc2616_response-serverHead-single-19LineSpace.yaml`
+    > cache MUST cache single-valued 19-line spaced Server response header
+
+23. `case_rfc2616_response-serverHead-single-withComment.yaml`
+    > cache MUST cache single-valued Server response header with a plain comment field
+
+24. `case_rfc2616_response-serverHead-single-woutComment.yaml`
+    > cache MUST cache single-valued Server response header without comment field
+
+25. `case_rfc2616_response-single-woutDateHead.yaml`
+    > cache MUST cache single-valued plain warning without Date response header
+
+26. `case_rfc2616_response-viaHead-multi-6Values.yaml`
+    > cache MUST cache all values of a multi-valued Via response header with 6 values
+
+27. `case_rfc2616_response-viaHead-order-multi-6Values.yaml`
+    > ache MUST preserve field-value order when caching multi-valued Via response header with 6 values
 
 ###Stale-Caching
 1. `case_rfc2616_POST-stale-URLs-location.yaml`

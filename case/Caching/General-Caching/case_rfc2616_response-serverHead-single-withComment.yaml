@@ -1,0 +1,59 @@
+# ------------------------------------------------
+# Case Name:
+#       case_rfc2616_response-serverHead-single-withComment
+# Case Description:
+#       cache MUST cache single-valued Server response header with a plain comment field
+# Testing Steps:
+#       step 1: request Server response header with a plain comment field
+#       step 2: check whether the response be cached
+# Author: qihai.qh@alibaba-inc.com
+# -----------------------------------------------
+# step 1: request Server response header with a plain comment field
+--- {
+    Request: {
+        method: GET,
+        uri: '/serverHead-single-withComment',
+        protocol: HTTP/1.1,
+        Connection: close,
+        Host: "macaroon.zymlinux.net",
+    },
+    ServerCheck: {
+        method: GET,
+        uri: '/serverHead-single-withComment',
+        protocol: HTTP/1.1,
+        Host: "macaroon.zymlinux.net",
+    },
+    Response: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Server: 'Macaroon/1.0 libmacaroon/123',
+        Last-Modified: now-31536000,
+        Connection: close,
+        body: body-server,
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Last-Modified: now-31536000,
+        Server: 'Macaroon/1.0 libmacaroon/123',
+        Connection: close,
+        body: body-server,
+    }
+}
+
+#step 2: check whether the response be cached
+--- {
+     Request: {
+        uri: '/serverHead-single-withComment',
+        Host: "macaroon.zymlinux.net",
+        Connection: close,
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Last-Modified: now-31536000,
+        Date: S_Date_Step1,
+        Server: 'Macaroon/1.0 libmacaroon/123',
+        body: body-server,
+    }
+}

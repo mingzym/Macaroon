@@ -1,0 +1,76 @@
+# ------------------------------------------------
+# Case Name:
+#       case_rfc2616_response-serverHead-single-18LineTabbed
+# Case Description:
+#       cache MUST cache single-valued 18-line tabbed Server response header
+# Testing Steps:
+#       step 1: request 18-line tabbed Server response header
+#       step 2: check whether the response be cached
+# Author: qihai.qh@alibaba-inc.com
+# -----------------------------------------------
+# step 1: request 18-line tabbed Server response header
+--- {
+    Request: {
+        method: GET,
+        uri: '/serverHead-single-18LineTabbed',
+        protocol: HTTP/1.1,
+        Connection: close,
+        Host: "macaroon.zymlinux.net",
+    },
+    ServerCheck: {
+        method: GET,
+        uri: '/serverHead-single-18LineTabbed',
+        protocol: HTTP/1.1,
+        Host: "macaroon.zymlinux.net",
+    },
+    Response: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Server: "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                         ",
+        Last-Modified: now-31536000,
+        Connection: close,
+        body: body-server,
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Last-Modified: now-31536000,
+        Server: "",
+        Connection: close,
+        body: body-server,
+    }
+}
+
+#step 2: check whether the response be cached
+--- {
+     Request: {
+        uri: '/serverHead-single-18LineTabbed',
+        Host: "macaroon.zymlinux.net",
+        Connection: close,
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Last-Modified: now-31536000,
+        Date: S_Date_Step1,
+        Server: "",
+        body: body-server,
+    }
+}
