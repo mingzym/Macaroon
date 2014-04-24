@@ -36,6 +36,7 @@
         statuscode: 200,
         content-length: 21,
         Date: D_Date_Step1,
+        Expires: "Tue, 21 Dec 2015 05:54:26 GMT",
         body: This body for expires,
     }
 }
@@ -64,6 +65,7 @@
         protocol: HTTP/1.1,
         content-length: 21,
         Date: D_Date_Step1,
+        Expires: "Tue, 21 Dec 2015 05:54:26 GMT",
         body: This body for expires,
     }
 }

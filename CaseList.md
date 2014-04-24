@@ -5,6 +5,9 @@
 2. `case_rfc2616_largeAge-30len.yaml`
     > cache MUST handle 30-length age or transmit 2147483648
 
+3. `case_rfc2616_age-include.yaml`
+    > from-cache responses MUST include an Age header
+
 ##Cache-Control
 ###Request
 1. `case_rfc2616_ReqCC-no-cache-respFrom.yaml`

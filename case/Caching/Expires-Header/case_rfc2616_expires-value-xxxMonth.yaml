@@ -36,6 +36,7 @@
         statuscode: 200,
         content-length: 21,
         Date: D_Date_Step1,
+        Expires: "Mon, 09 Jan 2015 08:22:25 GMT",
         body: This body for expires,
     }
 }

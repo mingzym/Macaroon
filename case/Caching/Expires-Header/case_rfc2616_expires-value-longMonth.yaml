@@ -26,7 +26,7 @@
     Response: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Expires: "Date: Mon, 09 December 2015 08:22:25 GMT",
+        Expires: "Mon, 09 December 2015 08:22:25 GMT",
         Content-Length: 21,
         Connection: close,
         body: This body for expires,
@@ -36,6 +36,7 @@
         statuscode: 200,
         content-length: 21,
         Date: D_Date_Step1,
+        Expires: "Mon, 09 December 2015 08:22:25 GMT",
         body: This body for expires,
     }
 }
@@ -58,6 +59,7 @@
         protocol: HTTP/1.1,
         content-length: 21,
         Date: D_Date_Step1,
+        Expires: "Mon, 09 December 2015 08:22:25 GMT",
         body: This body for expires,
     }
 }
