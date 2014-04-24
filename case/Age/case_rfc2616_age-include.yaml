@@ -1,0 +1,62 @@
+# ------------------------------------------------
+# Case Name:
+#    case_rfc2616_age-include
+# Case Description:
+#    from-cache responses MUST include an Age header
+# Testing Steps:
+#    step 1: send a request
+#    step 2: verify the cached include age header
+#
+# Author: qihai.qh@alibaba-inc.com
+# -----------------------------------------------
+#
+#step 1: send a request
+--- {
+     Request: {
+        method: GET,
+        uri: '/age-include',
+        protocol: HTTP/1.1,
+        Connection: close,
+        Host: "macaroon.zymlinux.net",
+    },
+
+    ServerCheck: {
+        uri: '/age-include',
+    },
+
+    Response: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Cache-Control: max-age=5,
+        Content-Length: 11,
+        Connection: close,
+        body: age include,
+
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Content-length: 11,
+        Connection: close,
+        body: age include,
+    }
+}
+
+#step 2: verify the cached include age header
+--- {
+     Request: {
+        method: GET,
+        uri: '/age-include',
+        protocol: HTTP/1.1,
+        Connection: close,
+        Host: "macaroon.zymlinux.net",
+    },
+
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        age: '>=0',
+        content-length: 11,
+        body: age include,
+    },
+}
