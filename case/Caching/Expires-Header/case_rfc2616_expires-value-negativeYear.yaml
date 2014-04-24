@@ -36,34 +36,8 @@
         statuscode: 200,
         content-length: 21,
         Date: D_Date_Step1,
+        Expires: "Mon, 12 Dec -2115 08:22:25 GMT",
         body: This body for expires,
     }
 }
 
-
---- {
-    sleep: 1
-}
-
-
-
-#step 2: identify whether cached this response
---- {
-     Request: {
-        method: GET,
-        uri: '/expires-value-negativeYear',
-        protocol: HTTP/1.1,
-        Connection: close,
-        Host: "macaroon.zymlinux.net",
-    },
-    ServerCheck: {
-        method: exclude,
-        uri: exclude,
-    },
-    ClientCheck: {
-        protocol: HTTP/1.1,
-        content-length: 21,
-        Date: D_Date_Step1,
-        body: This body for expires,
-    }
-}
