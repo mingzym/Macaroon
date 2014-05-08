@@ -26,7 +26,7 @@
     Response: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-Control: public,
+        Cache-Control: 'public,max-age=2',
         Last-Modified: now-86150,
         Expires: now+86150,
         Content-Length: 20,
@@ -35,11 +35,10 @@
     ClientCheck: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-Control: public,
+        Cache-Control: 'public,max-age=2',
         Last-Modified: now-86150,
         Expires: now+86150,
         Content-Length: 20,
-        Age: 0,
         body: content-20-123456789,
     }
 }
@@ -54,16 +53,21 @@
     ClientCheck: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-Control: public,
+        Cache-Control: 'public,max-age=2',
         Last-Modified: now-86150,
         Date: D_Date_Step1,
         Expires: now+86150,
         Content-Length: 20,
-        Age: 0,
+        Age: '>=0',
         body: content-20-123456789,
     }
 }
-# :s3 step 3: sending an uncachable HEAD to later check whether it purges the object 
+
+--- {
+  Sleep: 2,
+}
+
+# step 3: sending an uncachable HEAD to later check whether it purges the object
 
 --- {
      Request: {
@@ -85,6 +89,7 @@
         Last-Modified: now-86150,
         Expires: now+86150,
         Content-Length: 20,
+        body: content-20-123456789,
     },
     ClientCheck: {
         protocol: HTTP/1.1,

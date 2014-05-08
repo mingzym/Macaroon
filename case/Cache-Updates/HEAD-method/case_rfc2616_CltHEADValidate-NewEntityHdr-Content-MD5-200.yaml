@@ -31,7 +31,7 @@
     Response: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-Control: public,
+        Cache-Control: 'public,max-age=2',
         Last-Modified: now-86150,
         Expires: now+86150, 
         Content-MD5: PFe5r28u0GHL4DACIind8g==,
@@ -41,13 +41,12 @@
     ClientCheck: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-Control: public,
+        Cache-Control: 'public,max-age=2',
         Last-Modified: now-86150,
         Date: S_Date_Step1,
         Expires: now+86150,
         Content-MD5: PFe5r28u0GHL4DACIind8g==,
         Content-Length: 20,
-        Age: 0,
         body: content-20-123456789,
     }
 }
@@ -62,7 +61,7 @@
     ClientCheck: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-Control: public,
+        Cache-Control: 'public,max-age=2',
         Last-Modified: now-86150,
         Date: S_Date_Step1,
         Expires: now+86150,
@@ -99,6 +98,7 @@
         Expires: now+86150,
         Content-MD5: PFe5r28u0GHL4DACIind8g==,
         Content-Length: 20,
+        body: content-20-123456789,
     },
     ClientCheck: {
         protocol: HTTP/1.1,

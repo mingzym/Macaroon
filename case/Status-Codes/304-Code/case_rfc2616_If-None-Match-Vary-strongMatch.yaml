@@ -34,7 +34,7 @@
         Expires: now+86400,
         Content-Location: /backend/bzehbgyopr,
         Vary: User-Agent,
-        ETag: "migxfsphro",
+        ETag: '"migxfsphro"',
         content-length: 40,
         Connection: close,
         body: 56ypgJrzebUNL4MuhtG2YXqkcPHKveWOj1am7oCE,
@@ -44,13 +44,12 @@
         statuscode: 200,
         Cache-Control: 'public,xtension',
         Last-Modified: now-86400,
-        Date: now,
+        Date: D_Date_Step1,
         Expires: now+86400,
         Content-Location: /backend/bzehbgyopr,
         Vary: User-Agent,
-        ETag: "migxfsphro",
+        ETag: '"migxfsphro"',
         content-length: 40,
-        Age: 'r"^[1-9]+?[0-9]*$"',
         Connection: close,
         body: 56ypgJrzebUNL4MuhtG2YXqkcPHKveWOj1am7oCE,
     }
@@ -70,17 +69,19 @@
         statuscode: 200,
         Cache-Control: 'public,xtension',
         Last-Modified: now-86400,
-        Date: now,
+        Date: D_Date_Step1,
         Expires: now+86400,
         Content-Location: /backend/bzehbgyopr,
         Vary: User-Agent,
-        ETag: "migxfsphro",
+        ETag: '"migxfsphro"',
         content-length: 40,
-        Age: 'r"^[1-9]+?[0-9]*$"',
+        Age: 'r"^[0-9]+?[0-9]*$"',
         Connection: close,
         body: 56ypgJrzebUNL4MuhtG2YXqkcPHKveWOj1am7oCE,
     }
 }
+
+
 #step 3: request with if-none-match and response Vary,identify 304 response
 
 --- {
@@ -96,7 +97,7 @@
         protocol: HTTP/1.1,
         statuscode: 304,
         Etag: '"migxfsphro"',
-        Cache-Control: public,
+        Cache-Control: 'public,xtension',
         Expires: now+86400,
         Content-Location: /backend/bzehbgyopr,
         Vary: User-Agent,

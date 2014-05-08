@@ -26,7 +26,7 @@
         protocol: HTTP/1.1,
         statuscode: 200,
         Cache-Control: public,
-        Content-Length: 15,
+        Content-Length: 14,
         Last-Modified: now-31536000,
         Expires: now+31536000,
         Connection: close,
@@ -35,7 +35,7 @@
     ClientCheck: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        content-length: 15,
+        content-length: 14,
         Date: S_Date_Step1,
         body: Rj48FUgBpPyLi3,
     }

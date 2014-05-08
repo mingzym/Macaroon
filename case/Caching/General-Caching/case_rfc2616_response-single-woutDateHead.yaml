@@ -26,12 +26,14 @@
     Response: {
         protocol: HTTP/1.1,
         statuscode: 200,
+        Cache-Control: 'max-age=10',
         Connection: close,
         body: body-nodate,
     },
     ClientCheck: {
         protocol: HTTP/1.1,
         statuscode: 200,
+        Cache-Control: 'max-age=10',
         Connection: close,
         body: body-nodate,
     }

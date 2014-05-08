@@ -33,7 +33,7 @@
     Response: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-Control: public,
+        Cache-Control: 'public,max-age=10',
         Content-Length: 15,
         Last-Modified: now -31536000,
         Expires: now +31536000,
@@ -43,13 +43,12 @@
     ClientCheck: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-control: public,
+        Cache-Control: 'public,max-age=10',
         Content-length: 15,
         Last-Modified: now -31536000,
-        Age: 0,
         Expires: now +31536000,
         Connection: close,
-       body: response-dladds,
+        body: response-dladds,
     }
 }
 
@@ -68,12 +67,12 @@
    ClientCheck: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-control: public,
+        Cache-Control: 'public,max-age=10',
         Age: 0,
         Content-Length: 15,
         Last-Modified: now -31536000,      
         Connection: close,
-       body: response-dladds,
+        body: response-dladds,
     }
 }
 
@@ -110,7 +109,7 @@
         Content-Length: 15,
         Last-Modified: now -31536000,      
         Connection: close,
-       body: response-123456,
+        body: response-123456,
     }
 }
 #step 4 
@@ -130,7 +129,7 @@
     Response: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-Control: public,
+        Cache-Control: 'public,max-age=10',
         Content-Length: 15,
         Last-Modified: now -31536000,
         Expires: now +31536000,
@@ -140,13 +139,13 @@
     ClientCheck: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-control: public,
+        Cache-Control: 'public,max-age=10',
         Content-length: 15,
         Last-Modified: now -31536000,
         Age: 0,
         Expires: now +31536000,
         Connection: close,
-       body: response-dladds,
+        body: response-dladds,
     }
 }
 #step 5
@@ -166,7 +165,7 @@
     Response: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-Control: public,
+        Cache-Control: 'public,max-age=10',
         Content-Length: 15,
         Last-Modified: now -31536000,
         Expires: now +31536000,
@@ -176,12 +175,12 @@
     ClientCheck: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-control: public,
+        Cache-Control: 'public,max-age=10',
         Content-length: 15,
         Last-Modified: now -31536000,
         Expires: now +31536000,
         Connection: close,
-       body: response-bbbbbb,
+        body: response-bbbbbb,
     }
 }
 
@@ -204,7 +203,7 @@
         Content-Length: 15,
         Last-Modified: now -31536000,      
         Connection: close,
-       body: response-bbbbbb,
+        body: response-bbbbbb,
     }
 }
 
@@ -241,7 +240,7 @@
         Content-Length: 15,
         Last-Modified: now -31536000,      
         Connection: close,
-       body: response-123456,
+        body: response-123456,
     }
 }
 #step 8
@@ -263,6 +262,6 @@
         Content-Length: 15,
         Last-Modified: now -31536000,      
         Connection: close,
-       body: response-bbbbbb,
+        body: response-bbbbbb,
     }
 }

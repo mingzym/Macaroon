@@ -27,6 +27,7 @@
         protocol: HTTP/1.1,
         statuscode: 200,
         Allow: 'GET,HEAD,PUT,POST,PURGE,DELETE',
+        Cache-Control: 'max-age=10',
         Last-Modified: now-31536000,
         Connection: close,
         body: body-allow,
@@ -36,6 +37,7 @@
         statuscode: 200,
         Last-Modified: now-31536000,
         Allow: 'GET,HEAD,PUT,POST,PURGE,DELETE',
+        Cache-Control: 'max-age=10',
         Connection: close,
         body: body-allow,
     }

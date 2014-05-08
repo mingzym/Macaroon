@@ -82,6 +82,8 @@
         body: body-aaaaabbbbb,
     }
 }
+
+
 # step 3: performing end-to-end validation 
 
 --- {
@@ -99,7 +101,6 @@
         protocol: HTTP/1.1,
         New-Selector: bbc,
         Host: "macaroon.zymlinux.net",
-        If-None-Match: 'abcbbc',
     },
     Response: {
         protocol: HTTP/1.1,
@@ -109,21 +110,20 @@
         Last-Modified: now-31536000,
         Expires: now+31536000,
         ETag: "abcbbc",
-        content-length: 15,
+        content-length: 0,
         Content-Location: newly/,
         Connection: close,
     },
     ClientCheck: {
         protocol: HTTP/1.1,
-        statuscode: 200,
+        statuscode: 304,
         Cache-Control: public,
         Last-Modified: now-31536000,
         Expires: now+31536000,
         Vary: New-Selector,
         ETag: "abcbbc",
-        content-length: 15,
+        content-length: 0,
         Content-Location: newly/,
         Connection: close,
-        body: body-aaaaabbbbb,
     }
 }

@@ -25,7 +25,7 @@
     Response: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Transfer-Encoding: resp-chunked,
+        Transfer-Encoding: chunked,
         Connection: close,
         body: "file(chunk-size=65536 B, chunk-count=1)",
 

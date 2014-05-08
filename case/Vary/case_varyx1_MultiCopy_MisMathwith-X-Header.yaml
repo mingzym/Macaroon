@@ -23,7 +23,7 @@
     ServerCheck: {
         method: GET,
         uri: '/case_varyx1_MultiCopy_MisMathwith-X-Header',
-        X-Header: "BaR",
+        X-Header: "diff1",
         X-Aahpdvxj: helloxvary,
         Host: "macaroon.zymlinux.net",
     },
@@ -91,7 +91,6 @@
         protocol: HTTP/1.1,
         X-Header: "diff2",
         X-Aj: helloxvary2,
-        Connection: close,
         Host: "macaroon.zymlinux.net",
     }
 }

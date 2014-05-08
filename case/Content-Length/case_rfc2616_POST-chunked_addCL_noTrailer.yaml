@@ -27,7 +27,7 @@
     },
     ServerCheck: {
         method: POST,
-        Content-Length: 40,
+        Transfer-Encoding: chunked,
         body:zsvuoeifghppcczzelpmpxtyyoylejmddjyrnizv,
     },
     Response: {

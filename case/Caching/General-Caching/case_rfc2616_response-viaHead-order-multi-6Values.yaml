@@ -35,7 +35,7 @@
         statuscode: 200,
         Last-Modified: now-31536000,
         Via: r"a1.1,b2.2,c3.3,d4.4,e5.5,f6.6",
-        Connection: close,
-        body: body-via,
+       Connection: close,
+       body: body-via,
     }
 }

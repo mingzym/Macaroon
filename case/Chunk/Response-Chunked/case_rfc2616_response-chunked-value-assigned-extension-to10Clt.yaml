@@ -30,7 +30,7 @@
         body: "
         1;cname=123\r\n
         9\r\n
-        0;cname=123\r\n"
+        0\r\n"
     },
     ClientCheck: {
         protocol: HTTP/1.0,

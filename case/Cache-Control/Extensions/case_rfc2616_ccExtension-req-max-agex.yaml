@@ -1,0 +1,40 @@
+# ------------------------------------------------
+# Case Name:
+#       case_rfc2616_ccExtension-req-max-agex
+# Case Description:
+#       cache MUST ignore max-agex extension request cache-directive
+# Testing Steps:
+#       step 1: check whether cache MUST ignore max-agex extension request cache-directive
+# Author: qihai.qh@alibaba-inc.com
+# -----------------------------------------------
+# check whether cache MUST ignore max-agex extension request cache-directive
+--- {
+    Request: {
+        method: GET,
+        uri: '/ccExtension-req-max-agex',
+        protocol: HTTP/1.1,
+        Cache-Control: max-agex=10,
+        Connection: close,
+        Host: "macaroon.zymlinux.net",
+
+    },
+    ServerCheck: {
+        uri: '/ccExtension-req-max-agex',
+    },
+    Response: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Content-Length: 11,
+        Connection: close,
+        body: max-agex=10
+
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Cache-Control: EXCLUDE,
+        Content-Length: 11,
+        Connection: close,
+        body: max-agex=10
+    }
+}
