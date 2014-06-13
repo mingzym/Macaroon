@@ -22,9 +22,7 @@
         method: POST,
         uri: '/case_rfc2616_rqst-chunked-0B-block',
         protocol: HTTP/1.1,
-        content-length: 0,
         Transfer-Encoding: chunked,
-        Connection: close,
         Host: "macaroon.zymlinux.net",
         body: "0\r\n"
     },
@@ -37,7 +35,7 @@
         
     },
     ClientCheck: {
-        protocol: HTTP/1.0,
+        protocol: HTTP/1.1,
         statuscode: 200,
         content-length: 3,
         Connection: close,

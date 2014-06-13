@@ -1,0 +1,40 @@
+# ------------------------------------------------
+# Case Name:
+#       case_rfc2616_ccExtension-req-key=value
+# Case Description:
+#       cache MUST ignore cache-control key=value extension request cache-directive
+# Testing Steps:
+#       step 1: check whether cache ignore key=value
+# Author: qihai.qh@alibaba-inc.com
+# -----------------------------------------------
+# check whether cache ignore key=value
+--- {
+    Request: {
+        method: GET,
+        uri: '/ccExtension-req-key=value',
+        protocol: HTTP/1.1,
+        Cache-Control: key=value,
+        Connection: close,
+        Host: "macaroon.zymlinux.net",
+
+    },
+    ServerCheck: {
+        uri: '/ccExtension-req-key=value',
+    },
+    Response: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Content-Length: 9,
+        Connection: close,
+        body: key=value
+
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Cache-Control: EXCLUDE,
+        Content-Length: 9,
+        Connection: close,
+        body: key=value
+    }
+}

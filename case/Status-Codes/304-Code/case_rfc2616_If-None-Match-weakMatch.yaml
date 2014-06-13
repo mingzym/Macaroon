@@ -113,7 +113,6 @@
         statuscode: 304,
         Etag: 'W/"fbbscnqoio"',
         Cache-Control: public,
-        Expires: "exclude",
         Connection: close,
     }
 }    

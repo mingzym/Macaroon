@@ -50,7 +50,6 @@
     },
     ServerCheck: {
         uri: "/Respcc-nocacheAndExp",
-        If-Modify-Since: now-31536000,
     }
 }
 

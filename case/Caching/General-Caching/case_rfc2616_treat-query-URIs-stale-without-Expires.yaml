@@ -24,7 +24,7 @@
     Response: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-Control: public,
+        Cache-Control: 'public,max-age=10',
         Content-Length: 15,
         Last-Modified: now-31536000,
         Connection: close,
@@ -35,6 +35,7 @@
         statuscode: 200,
         content-length: 15,
         Last-Modified: now-31536000,
+        Cache-Control: 'public,max-age=10',
         Connection: close,
         body: body-onrqprdpkn,
     }

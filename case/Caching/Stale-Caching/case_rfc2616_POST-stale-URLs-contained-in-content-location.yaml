@@ -42,10 +42,9 @@
         Cache-control: public,
         Content-length: 15,
         Last-Modified: now -31536000,
-        Age: 0,
         Expires: now +31536000,
         Connection: close,
-       body: response-dladds,
+        body: response-dladds,
     }
 }
 
@@ -67,10 +66,9 @@
         Cache-control: public,
         Age: 0,
         Content-Length: 15,
-        Last-Modified: now -31536000,      
-        
+        Last-Modified: now -31536000,
         Connection: close,
-       body: response-dladds,
+        body: response-dladds,
     }
 }
 
@@ -107,7 +105,7 @@
         Content-Length: 15,
         Last-Modified: now -31536000,      
         Connection: close,
-       body: response-123456,
+        body: response-123456,
     }
 }
 #step 1.4: checking whether previous transaction purged A 

@@ -12,7 +12,7 @@
     Request: {
         method: POST,
         uri: '/rqst-chunked-1B-block',
-        protocol: HTTP/1.1,
+        protocol: HTTP/1.0,
         Transfer-Encoding: chunked,
         Connection: close,
         Host: "macaroon.zymlinux.net",
@@ -26,9 +26,7 @@
         method: POST,
         uri: '/rqst-chunked-1B-block',
         protocol: HTTP/1.1,
-        content-length: 1,
         Transfer-Encoding: chunked,
-        Connection: close,
         Host: "macaroon.zymlinux.net",
         body: "
         1\r\n

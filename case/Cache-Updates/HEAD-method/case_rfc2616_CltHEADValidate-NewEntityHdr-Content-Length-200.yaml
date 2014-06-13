@@ -26,7 +26,7 @@
     Response: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Cache-Control: public,
+        Cache-Control: 'public,max-age=2',
         Last-Modified: now-31536000,
         Expires: now+31536000,
         Content-Length: 20,
@@ -37,7 +37,6 @@
         protocol: HTTP/1.1,
         statuscode: 200,
         Content-Length: 20,
-        Age: '>=0',
         body: content-20-123456789,
     }
 }
@@ -89,6 +88,7 @@
         Expires: now+31536000,
         Content-Length: 20,
         Connection: close,
+        body: content-20-123456789,
     },
     ClientCheck: {
         protocol: HTTP/1.1,

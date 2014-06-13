@@ -46,6 +46,7 @@
 
               ",
         Last-Modified: now-31536000,
+        Cache-Control: 'max-age=10',
         Connection: close,
         body: body-ext,
     },
@@ -53,6 +54,7 @@
         protocol: HTTP/1.1,
         statuscode: 200,
         Last-Modified: now-31536000,
+        Cache-Control: 'max-age=10',
         exthead: "",
         Connection: close,
         body: body-ext,

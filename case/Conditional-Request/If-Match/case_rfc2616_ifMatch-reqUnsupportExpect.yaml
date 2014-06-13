@@ -43,7 +43,7 @@
         Last-Modified: now-31536000,
         Connection: close,
         body: content-20-123456789,
-        Etag: tag-abc,
+        Etag: '"tag-abc"',
     },
     ClientCheck: {
         protocol: HTTP/1.1,
@@ -52,7 +52,7 @@
         Last-Modified: now-31536000,
         Connection: close,
         body: content-20-123456789,
-        Etag: tag-abc,
+        Etag: '"tag-abc"',
     },
 }
 
@@ -65,7 +65,7 @@
         Expect: expect=params,
         Connection: close,
         Host: "macaroon.zymlinux.net",
-        If-Match: tag-abc,
+        If-Match: '"tag-abc"',
     },
     ClientCheck: {
         protocol: HTTP/1.1,

@@ -35,7 +35,7 @@
         Expires: now+86400,
         Content-Location: /backend/kifaapnjrv,
         Vary: User-Agent,
-        ETag: "tnlvksayzm",
+        ETag: '"tnlvksayzm"',
         content-length: 40,
         Connection: close,
         body: RU1WlngLPT5p7iee3IjbCcNBqAJ4G9uRrytOZ6Xm,
@@ -44,15 +44,14 @@
         protocol: HTTP/1.1,
         statuscode: 200,
         Cache-Control: public,
+        Cache-Control: xtension,
         Last-Modified: now-86400,
-        Date: now,
+        Date: D_Date_Step1,
         Expires: now+86400,
         Content-Location: /backend/kifaapnjrv,
-        Cache-Control: xtension,
         Vary: User-Agent,
-        ETag: "tnlvksayzm",
+        ETag: '"tnlvksayzm"',
         content-length: 40,
-        Age: 0,
         Connection: close,
         body: RU1WlngLPT5p7iee3IjbCcNBqAJ4G9uRrytOZ6Xm,
     }
@@ -72,17 +71,18 @@
         statuscode: 200,
         Cache-Control: public,
         Last-Modified: now-86400,
-        Date: now,
+        Date: D_Date_Step1,
         Expires: now+86400,
         Content-Location: /backend/kifaapnjrv,
         Cache-Control: xtension,
-        ETag: "tnlvksayzm",
+        ETag: '"tnlvksayzm"',
         content-length: 40,
-        Age: 0,
+        Age: '>=0',
         Connection: close,
         body: RU1WlngLPT5p7iee3IjbCcNBqAJ4G9uRrytOZ6Xm,
     }
 }
+
 #step 3: request with if-none-match and response no Vary head,identify 304 response
 
 --- {
@@ -99,6 +99,7 @@
         statuscode: 304,
         Etag: '"tnlvksayzm"',
         Cache-Control: public,
+        Cache-Control: xtension,
         Expires: now+86400,
         Content-Location: /backend/kifaapnjrv,
         Connection: close,

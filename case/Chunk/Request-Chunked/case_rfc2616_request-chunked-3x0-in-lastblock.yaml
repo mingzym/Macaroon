@@ -24,9 +24,7 @@
         method: POST,
         uri: '/rqst-chunked-3x0-in-lastblock',
         protocol: HTTP/1.1,
-        content-length: 0,
         Transfer-Encoding: chunked,
-        Connection: close,
         Host: "macaroon.zymlinux.net",
         body: "
         000\r\n"
@@ -41,7 +39,7 @@
         body: sdl
     },
     ClientCheck: {
-        protocol: HTTP/1.0,
+        protocol: HTTP/1.1,
         statuscode: 200,
         content-length: 3,
         Connection: close,

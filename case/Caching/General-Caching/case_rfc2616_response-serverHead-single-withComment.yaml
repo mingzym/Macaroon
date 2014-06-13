@@ -28,6 +28,7 @@
         statuscode: 200,
         Server: 'Macaroon/1.0 libmacaroon/123',
         Last-Modified: now-31536000,
+        Cache-Control: 'max-age=10',
         Connection: close,
         body: body-server,
     },
@@ -36,6 +37,7 @@
         statuscode: 200,
         Last-Modified: now-31536000,
         Server: 'Macaroon/1.0 libmacaroon/123',
+        Cache-Control: 'max-age=10',
         Connection: close,
         body: body-server,
     }

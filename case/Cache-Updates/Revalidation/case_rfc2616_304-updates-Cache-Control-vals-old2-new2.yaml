@@ -17,7 +17,7 @@
         uri: '/url-a',
         protocol: HTTP/1.1,
         New-Selector: abc,
-        Host: "macaroo.zymlinux.net",
+        Host: "macaroon.zymlinux.net",
         Connection: close,
     },
     ServerCheck: {
@@ -25,7 +25,7 @@
         uri: '/url-a',
         protocol: HTTP/1.1,
         New-Selector: abc,
-        Host: "macaroo.zymlinux.net",
+        Host: "macaroon.zymlinux.net",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -65,7 +65,7 @@
         protocol: HTTP/1.1,
         New-Selector: abc,
         Connection: close,
-        Host: "macaroo.zymlinux.net",
+        Host: "macaroon.zymlinux.net",
     },
     ServerCheck: {
         uri: EXCLUDE,
@@ -93,7 +93,7 @@
         uri: '/url-a',
         protocol: HTTP/1.1,
         New-Selector: bbc,
-        Host: "macaroo.zymlinux.net",
+        Host: "macaroon.zymlinux.net",
         Connection: close,
     },
     ServerCheck: {
@@ -101,8 +101,7 @@
         uri: '/url-a',
         protocol: HTTP/1.1,
         New-Selector: bbc,
-        Host: "macaroo.zymlinux.net",
-        If-None-Match: "abcbbc",
+        Host: "macaroon.zymlinux.net",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -114,12 +113,12 @@
         Cache-Control: new-1,
         Cache-Control: new-2,
         ETag: "abcbbc",
-        content-length: 15,
+        content-length: 0,
         Connection: close,
     },
     ClientCheck: {
         protocol: HTTP/1.1,
-        statuscode: 200,
+        statuscode: 304,
         Cache-Control: public,
         Last-Modified: now-31536000,
         Expires: now+31536000,
@@ -127,8 +126,7 @@
 	Cache-Control: new-2,
         Vary: New-Selector,
         ETag: "abcbbc",
-        content-length: 15,
+        content-length: 0,
         Connection: close,
-        body: body-aaaaabbbbb,
     }
 }

@@ -27,9 +27,7 @@
         method: POST,
         uri: '/rqst-chunked-incrct-bodylen',
         protocol: HTTP/1.1,
-        content-length: 3,
         Transfer-Encoding: chunked,
-        Connection: close,
         Host: "macaroon.zymlinux.net",
         body: "
         3\r\n
@@ -46,7 +44,7 @@
         
     },
     ClientCheck: {
-        protocol: HTTP/1.0,
+        protocol: HTTP/1.1,
         statuscode: 200,
         content-length: 3,
         Connection: close,
