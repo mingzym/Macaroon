@@ -1,6 +1,6 @@
 # ------------------------------------------------
 # Case Name:
-#     case_rfc2616_ReqCC-min-fresh-respFrom
+#     case_rfc2616_ccReqDirMsg-min-fresh-Cache-Control
 # Case Description: 
 #     Cache MUST not use entity in cache if request with cache-control=min-fresh
 # Testing Steps: 
@@ -18,7 +18,7 @@
         uri: '/ReqCC-min-fresh',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: '/ReqCC-min-fresh',
@@ -95,7 +95,7 @@
         protocol: HTTP/1.1,
         Cache-Control: max-age=3,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: '/ReqCC-min-fresh',

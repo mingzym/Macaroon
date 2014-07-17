@@ -14,23 +14,42 @@
         uri: '/resp-chunked-11-spaceValExt-toClt',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
         uri: '/resp-chunked-11-spaceValExt-toClt',
         protocol: HTTP/1.1,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
         statuscode: 200,
+        Cache-Control: 'public,max-age=10',
         Transfer-Encoding: chunked,
         Connection: close,
         body: "
         1;   \r\n
         9\r\n
         0\r\n"
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Connection: close,
+    }
+}
+
+--- {
+    Request: {
+        method: GET,
+        uri: '/resp-chunked-11-spaceValExt-toClt',
+        protocol: HTTP/1.1,
+        Connection: close,
+        Host: "macaroon.alibaba.com",
+    },
+    ServerCheck: {
+        uri: EXCLUDE,
     },
     ClientCheck: {
         protocol: HTTP/1.1,

@@ -14,13 +14,13 @@
         uri: '/response-chunked-0B-body-extension-to10Clt',
         protocol: HTTP/1.0,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
         uri: '/response-chunked-0B-body-extension-to10Clt',
         protocol: HTTP/1.1,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,

@@ -20,7 +20,7 @@
         method: GET,
         uri: '/case_rfc2616_CltHEADValidate-NewEntityHdr-Content-Length-200',
         protocol: HTTP/1.1,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         Connection: close,
     },
     Response: {
@@ -48,7 +48,7 @@
         uri: '/case_rfc2616_CltHEADValidate-NewEntityHdr-Content-Length-200',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ClientCheck: {
         protocol: HTTP/1.1,
@@ -94,7 +94,6 @@
         protocol: HTTP/1.1,
         statuscode: 200,
         Content-Length: 20,
-        Age: 0,
         Connection: close,
     }
 }
@@ -108,14 +107,14 @@
         method: GET,
         uri: '/case_rfc2616_CltHEADValidate-NewEntityHdr-Content-Length-200',
         protocol: HTTP/1.1,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         Connection: close,
     },
     ServerCheck: {
         method: GET,
         uri: '/case_rfc2616_CltHEADValidate-NewEntityHdr-Content-Length-200',
         protocol: HTTP/1.1,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -130,9 +129,8 @@
     ClientCheck: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Date: D_Date_Step3,
+        Date: D_Date_Step4,
         Content-Length: 20,
-        Age: '>0',
         Connection: close,
         body: content-20-123456789,
     }

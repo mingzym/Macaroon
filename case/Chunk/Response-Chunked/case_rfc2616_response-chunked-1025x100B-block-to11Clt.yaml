@@ -14,7 +14,7 @@
         uri: '/resp-chunked-11-1025x100B-toclt',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,

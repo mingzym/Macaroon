@@ -15,14 +15,14 @@
         protocol: HTTP/1.1,
         TE: trailer,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
         uri: '/rmRespTrailer-te-trailers',
         protocol: HTTP/1.1,
         TE: trailer,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,

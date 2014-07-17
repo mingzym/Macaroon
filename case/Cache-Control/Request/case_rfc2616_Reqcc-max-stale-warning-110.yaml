@@ -25,7 +25,7 @@
         uri: '/case_rfc2616_cc-max-stale-warning-110',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,

@@ -21,12 +21,12 @@
         uri: '/url-a',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
         uri: '/url-a',
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -58,7 +58,7 @@
         uri: '/url-a',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: EXCLUDE,
@@ -77,12 +77,12 @@
         uri: '/url-b',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
  ServerCheck: {
         method: GET,
         uri: '/url-b',
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
    },
      Response: {
         protocol: HTTP/1.1,
@@ -108,7 +108,7 @@
         uri: '/url-b',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: EXCLUDE,
@@ -128,13 +128,13 @@
         protocol: HTTP/1.1,
         Connection: close,
         Content-Length: 23,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         body: post_content-cccccccccc,
     },
  ServerCheck: {
         method: POST,
         uri: '/posturl',
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         body: post_content-cccccccccc,
     },
      Response: {
@@ -164,7 +164,7 @@
         uri: '/url-a',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     servercheck: {
         uri: 'url-a',
@@ -182,7 +182,7 @@
         uri: '/url-b',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     servercheck: {
         uri: '/url-b',

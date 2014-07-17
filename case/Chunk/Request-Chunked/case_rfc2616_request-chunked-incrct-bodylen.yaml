@@ -16,7 +16,7 @@
         content-length: 1,
         Transfer-Encoding: chunked,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         body: "
         3\r\n
         ccc\r\n
@@ -28,7 +28,7 @@
         uri: '/rqst-chunked-incrct-bodylen',
         protocol: HTTP/1.1,
         Transfer-Encoding: chunked,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         body: "
         3\r\n
         ccc\r\n

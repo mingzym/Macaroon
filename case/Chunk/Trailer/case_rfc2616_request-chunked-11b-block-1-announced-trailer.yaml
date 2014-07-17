@@ -15,7 +15,7 @@
         protocol: HTTP/1.1,
         Transfer-Encoding: chunked,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         body: "
         b\r\n
         11111111111\r\n
@@ -29,7 +29,7 @@
         protocol: HTTP/1.1,
         Content-Length: 11,
         Transfer-Encoding: chunked,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         body: "
         b\r\n
         11111111111\r\n

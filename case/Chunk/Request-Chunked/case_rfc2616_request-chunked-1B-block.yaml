@@ -15,7 +15,7 @@
         protocol: HTTP/1.0,
         Transfer-Encoding: chunked,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         body: "
         1\r\n
         a\r\n
@@ -27,7 +27,7 @@
         uri: '/rqst-chunked-1B-block',
         protocol: HTTP/1.1,
         Transfer-Encoding: chunked,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         body: "
         1\r\n
         a\r\n

@@ -19,6 +19,7 @@
         method: GET,
         uri: '/case_rfc2616_CltHEADValidate-NewEntityHdr-Last-Modified-304',
         protocol: HTTP/1.1,
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
@@ -51,6 +52,7 @@
         method: GET,
         uri: '/case_rfc2616_CltHEADValidate-NewEntityHdr-Last-Modified-304',
         protocol: HTTP/1.1,
+        Host: "macaroon.alibaba.com",
     },
     ClientCheck: {
         protocol: HTTP/1.1,
@@ -99,16 +101,21 @@
         Last-Modified: now-86150,
         Date: S_Date_Step3,
         Expires: now+86150,
-        Content-Length: 20,
-        Age: 0,
+        Content-Length: 0,
     }
 }
+
+--- {
+    sleep: 1
+}
+
 # step 4: checking whether previous uncachable HEAD purged the object 
 
 --- {
      Request: {
         method: GET,
         uri: '/case_rfc2616_CltHEADValidate-NewEntityHdr-Last-Modified-304',
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
@@ -128,10 +135,9 @@
         statuscode: 200,
         Cache-Control: public,
         Last-Modified: now-86150,
-        Date: S_Date_Step3,
+        Date: S_Date_Step4,
         Expires: now+86150,
         Content-Length: 20,
-        Age: ">=0",
         body: content-20-123456789,
     }
 }

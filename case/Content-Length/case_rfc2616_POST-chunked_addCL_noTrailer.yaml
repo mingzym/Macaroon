@@ -14,7 +14,7 @@
         uri: '/case_rfc2616_POST-chunked_addCL_noTrailer',
         protocol: HTTP/1.1,
         Transfer-Encoding: chunked,
-        Host: macaroon.zymlinux.net,
+        Host: macaroon.alibaba.com,
         Connection: close,
         body: "
             14\r\n
@@ -28,18 +28,18 @@
     ServerCheck: {
         method: POST,
         Transfer-Encoding: chunked,
-        body:zsvuoeifghppcczzelpmpxtyyoylejmddjyrnizv,
+        body: zsvuoeifghppcczzelpmpxtyyoylejmddjyrnizv,
     },
     Response: {
         protocol: HTTP/1.1,
-        status: 200,
+        statuscode: 200,
         Connection: close,
         Content-Length: 15,
         body: 15-1234567890ab,
     },
     ClientCheck: {
         protocol: HTTP/1.1,
-        status:  200,
+        statuscode: 200,
         Content-Length: 15,
         body: 15-1234567890ab,
     }

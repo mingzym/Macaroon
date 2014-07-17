@@ -27,6 +27,8 @@ import config
 
 import getopt
 
+global ONLY_CHECK
+
 def printDoc(fd, step):
     """
     this method is to write annotation from yaml file as the case file's docString
@@ -186,7 +188,7 @@ def printRequestStep(fd, step, serial):
     fd.write(zero)
     now = '        now = datetime.datetime.utcnow()\n'
     fd.write(now)
-
+    
     #add configuration step before test
     opconfig = step[0]
     if opconfig != None:
@@ -197,16 +199,16 @@ def printRequestStep(fd, step, serial):
         fd.write(line2)
         fd.write(line3)
 
-
-    response = step[1]
-    if response != None:
-        line1 = '        _response = ' + str(response) + '\n'
-        line2 = '        mutil.replaceNow(_response, now)\n'
-        line3 = '        mutil.setResponse(self.helpc, _response)\n\n'
-        fd.write(line1)
-        fd.write(line2)
-        fd.write(line3)
-
+    if (ONLY_CHECK != 1):
+        response = step[1]
+        if response != None:
+            line1 = '        _response = ' + str(response) + '\n'
+            line2 = '        mutil.replaceNow(_response, now)\n'
+            line3 = '        mutil.setResponse(self.helpc, _response)\n\n'
+            fd.write(line1)
+            fd.write(line2)
+            fd.write(line3)
+    
     request = step[2]
     if request != None:
         line0 = '        conn = hc.HTTPConnection(config._server, config._port, config._timeout)\n'
@@ -218,23 +220,28 @@ def printRequestStep(fd, step, serial):
         fd.write(line2)
         fd.write(line3)
 
-    servercheck = step[3]
-    if servercheck != None:
-        line1 = '        _servercheck = ' + str(servercheck) + '\n'
-        line2 = '        mutil.replaceNow(_servercheck, now)\n'
-        line3 = '        mutil.serverCheck(self.helpc, _servercheck)\n\n'
-        fd.write(line1)
-        fd.write(line2)
-        fd.write(line3)
+    if (ONLY_CHECK != 2):
+        servercheck = step[3]
+        if servercheck != None:
+            line1 = '        _servercheck = ' + str(servercheck) + '\n'
+            line2 = '        mutil.replaceNow(_servercheck, now)\n'
+            line3 = '        mutil.serverCheck(self.helpc, _servercheck)\n\n'
+            fd.write(line1)
+            fd.write(line2)
+            fd.write(line3)
+        if (ONLY_CHECK == 1):
+            line4 = '        time.sleep(1000000)\n\n'
+            fd.write(line4)
 
-    clientcheck = step[4]
-    if clientcheck != None:
-        line1 = '        _clientcheck = ' + str(clientcheck) + '\n'
-        line2 = '        mutil.replaceNow(_clientcheck, now)\n'
-        line3 = '        mutil.clientCheck(self.helpc, response, _clientcheck)\n\n'
-        fd.write(line1)
-        fd.write(line2)
-        fd.write(line3)
+    if (ONLY_CHECK != 1):
+        clientcheck = step[4]
+        if clientcheck != None:
+            line1 = '        _clientcheck = ' + str(clientcheck) + '\n'
+            line2 = '        mutil.replaceNow(_clientcheck, now)\n'
+            line3 = '        mutil.clientCheck(self.helpc, response, _clientcheck)\n\n'
+            fd.write(line1)
+            fd.write(line2)
+            fd.write(line3)
 
 
 def printSleepStep(fd, step):
@@ -284,17 +291,25 @@ if __name__ == '__main__':
     ENV_CLEAN = True
 
     try:
-        options, reminder = getopt.getopt(sys.argv[1:], 's:', ['skip='])
+        options, reminder = getopt.getopt(sys.argv[1:], 's:o:', ['skip=','only'])
     except getopt.GetoptError as err:
         print 'ERROR: ', err
         print usage
         sys.exit(1)
 
+    global ONLY_CHECK
+    ONLY_CHECK = 0
     for opt, arg in options:
         if opt in ('-s', '--skip'):
             if arg in ('clean', 'env-clean'):
                 ENV_CLEAN = False
-
+        if opt in ('-o', '--only'):
+            if arg in ('sc', 'server_check'):
+                ONLY_CHECK = 1
+            elif arg in ('cc', 'client_check'):
+                ONLY_CHECK = 2
+    #print ("ONLY_CHECK==" + str(ONLY_CHECK))        
+            
 
     casedata = sys.argv[-1]
     casename = casedata[0:-5] + '.py'

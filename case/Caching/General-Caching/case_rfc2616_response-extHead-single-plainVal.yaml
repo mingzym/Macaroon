@@ -15,13 +15,13 @@
         uri: '/extHead-single-plainVal',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
         uri: '/extHead-single-plainVal',
         protocol: HTTP/1.1,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -47,7 +47,7 @@
 --- {
      Request: {
         uri: '/extHead-single-plainVal',
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         Connection: close,
     },
     ClientCheck: {

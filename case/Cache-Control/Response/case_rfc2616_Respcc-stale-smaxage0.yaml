@@ -19,7 +19,7 @@
         uri: '/Respcc-stale-smaxage=0',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: '/Respcc-stale-smaxage=0',
@@ -52,7 +52,7 @@
         Cache-Control: max-stale,
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: "exclude",
@@ -82,7 +82,7 @@
         Cache-Control: max-stale,
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: "exclude",
@@ -107,7 +107,7 @@
         uri: '/Respcc-stale',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: '/Respcc-stale',
@@ -116,7 +116,7 @@
         protocol: HTTP/1.1,
         statuscode: 200,
         Cache-Control: public,
-        Cache-Control: s-maxage = 0,
+        Cache-Control: 's-maxage=0',
         Content-Length: 15,
         Last-Modified: now-31536000,
         Expires: now+31536000,
@@ -125,11 +125,15 @@
     },
     ClientCheck: {
         cache-control: public,
-        cache-control: s-maxage = 0,
+        cache-control: 's-maxage=0',
         content-length: 15,
         Date: D_Date_Step4,
         body: WMtXKwbnxjmDNAB,
     }
+}
+
+--- {
+    sleep: 1
 }
 
 # step 5: request again check whether it will revalidate the entity
@@ -139,11 +143,9 @@
         uri: '/Respcc-stale',
         protocol: HTTP/1.1,
         Connection: close,
-        Cache-Control: max-stale,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: '/Respcc-stale',
-        If-Modify-Since: now-31536000,
     }
 }

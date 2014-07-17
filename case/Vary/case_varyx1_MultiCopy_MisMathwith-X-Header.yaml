@@ -18,14 +18,14 @@
         X-Header: "diff1",
         X-Aahpdvxj: helloxvary,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
         uri: '/case_varyx1_MultiCopy_MisMathwith-X-Header',
         X-Header: "diff1",
         X-Aahpdvxj: helloxvary,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -59,7 +59,7 @@
         X-Header: "diff1",
         X-Aahpdvxj: helloxvary,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ClientCheck: {
         protocol: HTTP/1.1,
@@ -83,7 +83,7 @@
         X-Header: "diff2",
         X-Aj: helloxvary2,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
@@ -91,6 +91,6 @@
         protocol: HTTP/1.1,
         X-Header: "diff2",
         X-Aj: helloxvary2,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     }
 }

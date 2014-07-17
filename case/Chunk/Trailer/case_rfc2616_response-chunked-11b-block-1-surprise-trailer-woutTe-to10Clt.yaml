@@ -14,13 +14,13 @@
         uri: '/resp-chunked-10-trailer-11-1-surprise-woutTe-toClt',
         protocol: HTTP/1.0,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
         uri: '/resp-chunked-10-trailer-11-1-surprise-woutTe-toClt',
         protocol: HTTP/1.1,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,

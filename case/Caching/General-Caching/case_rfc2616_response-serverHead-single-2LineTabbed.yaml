@@ -15,13 +15,13 @@
         uri: '/serverHead-single-2LineTabbed',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
         uri: '/serverHead-single-2LineTabbed',
         protocol: HTTP/1.1,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -48,7 +48,7 @@
 --- {
      Request: {
         uri: '/serverHead-single-2LineTabbed',
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         Connection: close,
     },
     ClientCheck: {

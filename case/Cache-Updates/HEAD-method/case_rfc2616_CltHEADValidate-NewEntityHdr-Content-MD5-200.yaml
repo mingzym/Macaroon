@@ -19,14 +19,14 @@
         method: GET,
         uri: '/case_rfc2616_CltHEADValidate-NewEntityHdr-Content-MD5-200',
         protocol: HTTP/1.1,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         Connection: close,
     },
     ServerCheck: {
         method: GET,
         uri: '/case_rfc2616_CltHEADValidate-NewEntityHdr-Content-MD5-200',
         protocol: HTTP/1.1,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -109,7 +109,6 @@
         Expires: now+86150,
         Content-MD5: PFe5r28u0GHL4DACIind8g==,
         Content-Length: 20,
-        Age: 0,
     }
 }
 # step 4: checking whether previous uncachable HEAD purged the object 
@@ -135,10 +134,9 @@
         statuscode: 200,
         Cache-Control: public,
         Last-Modified: now-86150,
-        Date: S_Date_Step3,
+        Date: S_Date_Step4,
         Expires: now+86150,
         Content-MD5: PFe5r28u0GHL4DACIind8g==,
         Content-Length: 20,
-        Age: ">=0",
     }
 }

@@ -19,7 +19,7 @@
         X-b: vouyewphepyfmc,
         X-c: vbgkkqbjeriqcrphyv,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
@@ -27,7 +27,7 @@
         X-a: vkwbhvdzkssipap,
         X-b: vouyewphepyfmc,
         X-c: vbgkkqbjeriqcrphyv,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -64,7 +64,7 @@
         X-b: vouyewphepyfmc,
         X-c: vbgkkqbjeriqcrphyv,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ClientCheck: {
         protocol: HTTP/1.1,
@@ -91,7 +91,7 @@
         X-b: vfhebwlh,
         X-Atj: vhn,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,

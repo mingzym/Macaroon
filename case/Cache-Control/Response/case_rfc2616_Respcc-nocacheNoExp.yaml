@@ -16,7 +16,7 @@
         uri: '/Respcc-nocacheNoExp',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
     },
@@ -47,7 +47,7 @@
         uri: '/Respcc-nocacheNoExp',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: "/Respcc-nocacheNoExp",

@@ -18,6 +18,7 @@
      Request: {
         method: GET,
         uri: '/case_rfc2616_CltHEADValidate-NewEntityHdr-Last-Modified-200',
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
@@ -49,6 +50,7 @@
         method: GET,
         uri: '/case_rfc2616_CltHEADValidate-NewEntityHdr-Last-Modified-200',
         protocol: HTTP/1.1,
+        Host: "macaroon.alibaba.com",
     },
     ClientCheck: {
         protocol: HTTP/1.1,
@@ -98,7 +100,6 @@
         Last-Modified: now-86150,
         Expires: now+86150,
         Content-Length: 20,
-        Age: 0,
     }
 }
 
@@ -109,6 +110,7 @@
         method: GET,
         uri: '/case_rfc2616_CltHEADValidate-NewEntityHdr-Last-Modified-200',
         protocol: HTTP/1.1,
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
@@ -132,7 +134,6 @@
         Date: S_Date_Step4,
         Expires: now+86150,
         Content-Length: 20,
-        Age: 0,
         body: content-20-123456789,
     }
 }

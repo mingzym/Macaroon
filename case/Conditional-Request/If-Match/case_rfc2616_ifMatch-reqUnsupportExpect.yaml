@@ -20,7 +20,7 @@
         protocol: HTTP/1.1,
         Expect: expect=params,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ClientCheck: {
         protocol: HTTP/1.1,
@@ -33,7 +33,7 @@
         uri: '/ifNoneMatch-reqUnsupportExpect',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -64,7 +64,7 @@
         protocol: HTTP/1.1,
         Expect: expect=params,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         If-Match: '"tag-abc"',
     },
     ClientCheck: {

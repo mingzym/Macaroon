@@ -17,7 +17,7 @@
         uri: '/age-include',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
 
     ServerCheck: {
@@ -29,6 +29,7 @@
         statuscode: 200,
         Cache-Control: max-age=5,
         Content-Length: 11,
+        Last-Modified: now-31536000,
         Connection: close,
         body: age include,
 
@@ -49,7 +50,7 @@
         uri: '/age-include',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
 
     ClientCheck: {

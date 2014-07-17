@@ -14,13 +14,13 @@
         uri: '/resp-chunked-10-longQValExt-16385-toClt',
         protocol: HTTP/1.0,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
         uri: '/resp-chunked-10-longQValExt-16385-toClt',
         protocol: HTTP/1.1,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
