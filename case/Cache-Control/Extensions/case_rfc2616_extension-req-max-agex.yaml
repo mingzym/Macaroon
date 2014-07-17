@@ -1,40 +1,41 @@
 # ------------------------------------------------
 # Case Name:
-#       case_rfc2616_ccExtension-req-key=value
+#       case_rfc2616_extension-req-max-agex
 # Case Description:
-#       cache MUST ignore cache-control key=value extension request cache-directive
+#       cache MUST ignore max-agex extension request
 # Testing Steps:
-#       step 1: check whether cache ignore key=value
+#       step 1: check whether cache MUST ignore max-agex extension request
 # Author: qihai.qh@alibaba-inc.com
 # -----------------------------------------------
-# check whether cache ignore key=value
+# check whether cache MUST ignore max-agex extension request cache-directive
 --- {
     Request: {
         method: GET,
-        uri: '/ccExtension-req-key=value',
+        uri: '/ccExtension-req-max-agex',
         protocol: HTTP/1.1,
-        Cache-Control: key=value,
+        Cache-Control: max-agex=10,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
 
     },
     ServerCheck: {
-        uri: '/ccExtension-req-key=value',
+        uri: '/ccExtension-req-max-agex',
+        Cache-Control: EXCLUDE,
     },
     Response: {
         protocol: HTTP/1.1,
         statuscode: 200,
-        Content-Length: 9,
+        Content-Length: 11,
         Connection: close,
-        body: key=value
+        body: max-agex=10
 
     },
     ClientCheck: {
         protocol: HTTP/1.1,
         statuscode: 200,
         Cache-Control: EXCLUDE,
-        Content-Length: 9,
+        Content-Length: 11,
         Connection: close,
-        body: key=value
+        body: max-agex=10
     }
 }

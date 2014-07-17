@@ -15,14 +15,14 @@
         protocol: HTTP/1.0,
         TE: trailers,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
         uri: '/resp-chunked-10-trailer-11-1-announced-withTe-toClt',
         protocol: HTTP/1.1,
         TE: trailers,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,

@@ -16,7 +16,7 @@
         uri: '/expires-value-0enQuoted',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
@@ -54,7 +54,7 @@
         protocol: HTTP/1.1,
         If-Modified-Since:now,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: '/expires-value-0enQuoted',

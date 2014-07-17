@@ -17,7 +17,7 @@
         uri: '/ifMatch-reqUnsupportHost',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "exclude",
+        Host: " ",
     },
     ClientCheck: {
         protocol: HTTP/1.1,
@@ -31,7 +31,7 @@
         uri: '/ifMatch-reqUnsupportHost',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -40,8 +40,8 @@
         Content-Length: 20,
         Last-Modified: now-31536000,
         Connection: close,
-        body: body-onrqprdpkn,
-        Etag: etag-abc,
+        body: content-20-123456789,
+        Etag: '"etag-abc"',
     },
     ClientCheck: {
         protocol: HTTP/1.1,
@@ -50,7 +50,7 @@
         Last-Modified: now-31536000,
         Connection: close,
         body: content-20-123456789,
-        Etag: etag-abc,
+        Etag: '"etag-abc"',
     },
 }
 #Verify If-Match is ignored when no host
@@ -60,8 +60,8 @@
         uri: '/ifMatch-reqUnsupportHost',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "exclude",
-        If-Match: etag-abc
+        Host: " ",
+        If-Match: '"etag-abc"'
     },
     ClientCheck: {
         protocol: HTTP/1.1,

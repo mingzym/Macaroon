@@ -1,29 +1,29 @@
 # ------------------------------------------------
 # Case Name:
-#       case_rfc2616_ccExtension-req-max-age-whole
+#       case_rfc2616_extension-resp-max-age-whole
 # Case Description:
-#       cache MUST ignore max-age=5 in the name of quoted extension request cache-directive
+#       cache MUST ignore max-age=5 in the name of quoted extension response
 # Testing Steps:
-#       step 1: check whether cache MUST ignore max-age=5 in the name of quoted extension request cache-directive
+#       step 1: check whether cache MUST ignore max-age=5 in the name of quoted extension response
 # Author: qihai.qh@alibaba-inc.com
 # -----------------------------------------------
-# check whether cache MUST ignore max-age=5 in the name of quoted extension request cache-directive
+# check whether cache MUST ignore max-age=5 in the name of quoted extension response
 --- {
     Request: {
         method: GET,
-        uri: '/ccExtension-req-max-age-whole',
+        uri: '/ccExtension-resp-max-age-whole',
         protocol: HTTP/1.1,
         Connection: close,
-        Cache-Control: '"max-age=5"=value',
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
 
     },
     ServerCheck: {
-        uri: '/ccExtension-req-max-age-whole',
+        uri: '/ccExtension-resp-max-age-whole',
     },
     Response: {
         protocol: HTTP/1.1,
         statuscode: 200,
+        Cache-Control: '"max-age=5"=value',
         Content-Length: 17,
         Connection: close,
         body: '"max-age=5"=value'

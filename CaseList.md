@@ -8,6 +8,51 @@
 3. `case_rfc2616_age-include.yaml`
     > from-cache responses MUST include an Age header
 
+4. `case_rfc2616_age-0s-noResp-noReq-delay.yaml`
+    > When using 0-second origin age header with no response delay and no request delay, cache MUST return 0 age
+
+5. `case_rfc2616_age-40s-noResp-noReq-delay.yaml`
+    > When using 0-second origin age header with no response delay and no request delay, cache MUST return 40 age
+
+6. `case_rfc2616_age-5100s-3sResp-4sReq-delay.yaml`
+    > When using 0-second origin age header with 3 second response delay and 4 second request delay, cache MUST return 5107 age
+
+7. `case_rfc2616_age-169600s-noResp-noReq-delay.yaml`
+    > When using 0-second origin age header with no response delay and no request delay, cache MUST return 169600 age
+
+8. `case_rfc2616_age-31536005s.yaml`
+    > cache MUST handle 31536005 age
+
+9. `case_rfc2616_age-1073741823s.yaml`
+    > cache MUST handle 1073741823s age
+
+10. `case_rfc2616_age-2147483647s.yaml`
+    > cache MUST handle 2147483647 age
+
+11. `case_rfc2616_age-2147483648s.yaml`
+    > cache MUST handle 2147483648s age
+
+12. `case_rfc2616_age-2147483649s.yaml`
+    > cache MUST handle 2147483649s age, then transmit 2147483648
+
+13. `case_rfc2616_age-noAge-noResp-5sReq-delay.yaml`
+    > When using no age header with no response delay and 5 second request delay, cache MUST return 5 age
+
+14. `case_rfc2616_age-noAge-noResp-noReq-delay.yaml`
+    > When using no age header with no response delay and no request delay, cache MUST return 0 age
+
+15. `case_rfc2616_largeAge-55len.yaml`
+    > cache MUST handle 55-length age, then transmit 2147483648
+
+16. `case_rfc2616_largeAge-111len.yaml`
+    > cache MUST handle 111-length age, then transmit 2147483648
+
+17. `case_rfc2616_resp_add-missing-date.yaml`
+    >  proxy MUST add missing Date header to response
+
+18. `case_rfc2616_stale-ageWarning113-cache-5s.yaml`
+    > cache MUST attach Warning 113 to hits older than 86405 seconds cached for 5 seconds
+
 ##Cache-Control
 ###Request
 1. `case_rfc2616_ReqCC-no-cache-respFrom.yaml`
@@ -24,6 +69,9 @@
 
 5. `case_rfc2616_ReqCC-no-store.yaml`
     > Cache MUST NOT use the copy in cache if request with cache-control: no-store
+
+6. `case_rfc2616_ccReqDirMsg-min-fresh-Cache-Control.yaml`
+    Cache MUST not use entity in cache if request with cache-control=min-fresh
          
 ###Response
 1. `case_rfc2616_Respcc-nocacheNoExp.yaml`
@@ -37,6 +85,70 @@
 
 4. `case_rfc2616_Respcc-stale-smaxage8.yaml`
     > Cache MUST revalidate the cached entity whose s-maxage=8
+
+5. `case_rfc2616_Respcc-maxageAndExp.yaml`
+    > Cache MUST cache the response if the response header with maxage and expires
+
+6. `case_rfc2616_Respcc-maxageOnly.yaml`
+    > Cache MUST cache the response if the response header with maxage only
+
+7. `case_rfc2616_Respcc-must-revalidate.yaml`
+    > Cache MUST cache the response if the response header with must-revalidate only
+
+8. `case_rfc2616_Respcc-no-store.yaml`
+    > Cache MUST cache the response if the response header with no-store only
+
+9. `case_rfc2616_Respcc-privateOnly.yaml`
+    > Cache MUST cache the response if the response header with private only
+
+10. `case_rfc2616_Respcc-proxy-revalidate.yaml`
+    > Cache MUST cache the response if the response header with proxy-revalidate only
+
+11. `case_rfc2616_Respcc-RespMaxageFresh-ReqMaxageAsStale.yaml`
+    > Cache MUST cache the response if the response maxage and request maxage
+
+12. `case_rfc2616_Respcc-RespMaxageStale-ReqMaxageAsFresh.yaml`
+    > Cache MUST cache the response if the request maxage and response maxage
+
+13. `case_rfc2616_Respcc-Smaxage-Maxage-Exp.yaml`
+    > Cache MUST cache the response if the Smaxage and Maxage and Expires
+
+###Extensions
+1. `case_rfc2616_extension-req-key=value.yaml`
+    > cache MUST ignore cache-control key=value extension request
+
+2. `case_rfc2616_extension-req-max-age-name.yaml`
+    > cache MUST ignore max-age=5 in the name of key=value extension request
+
+3. `case_rfc2616_extension-req-max-age-value.yaml`
+    > cache MUST ignore max-age=5 in the value of key=value extension request
+
+4. `case_rfc2616_extension-req-max-age-whole.yaml`
+    > cache MUST ignore max-age=5 in the name of quoted extension request
+
+5. `case_rfc2616_extension-req-max-agex.yaml`
+    > cache MUST ignore max-agex extension request
+
+6. `case_rfc2616_extension-req-xmax-age.yaml`
+    > cache MUST ignore xmax-age extension request
+
+7. `case_rfc2616_extension-resp-key=value.yaml`
+    > cache MUST ignore cache-control key=value extension response
+
+8. `case_rfc2616_extension-resp-max-age-name.yaml`
+    > cache MUST ignore max-age=5 in the name of key=value extension response
+
+9. `case_rfc2616_extension-resp-max-age-value.yaml`
+    > cache MUST ignore max-age=5 in the value of key=value extension response
+
+10. `case_rfc2616_extension-resp-max-age-whole.yaml`
+    > cache MUST ignore max-age=5 in the name of quoted extension response
+
+11. `case_rfc2616_extension-resp-max-agex.yaml`
+    > cache MUST ignore max-agex extension response
+
+12. `case_rfc2616_extension-resp-xmax-age.yaml`
+    > cache MUST ignore xmax-age extension response
 
 ##Cache-Updates
 ###HEAD-Method
@@ -492,13 +604,14 @@
 1. `case_rfc2616_304Modified-newTag.yaml` 
     > if-Modified-Since and a new ETag value ,refresh status and ETag
 
+2. `case_rfc2616_rsp-without-lastModified-header.yaml`
+    > When cache is expired, if response without Last-Modified header, request without If-Modified-Since header
+
 ###Multi-Conditional
 1. `case_rfc2616_multiIf-timed-If-Range.yaml`
     > multiIf:If-None-Match-match,If-Modified-Since-match with If-Range-timed,cache refresh
 2. `case_rfc2616_multiIf-tagged-If-Range.yaml`
     > multiIf:If-None-Match-match,If-Modified-Since-match with If-Range-tagged,cache refresh
-
-
 
 ##Content-Length
 1. `case_rfc2616_POST-chunked_addCL_noTrailer`
@@ -523,6 +636,31 @@
 
 2. `case_rfc2616_HopbyHop_NoForward_Trailer_Req.yaml`
     > proxy MUST NOT forward hop-by-hop response header: Trailer
+
+##Pragma-Headers
+1. `case_rfc2616_pragma-req-withNocacheTokens.yaml`
+    > proxy MUST pass through Pragma requests with no-cache tokens
+
+2. `case_rfc2616_pragma-req-withParamQuotedValue.yaml`
+    > proxy MUST pass through Pragma requests with param=quoted-value tokens
+
+3. `case_rfc2616_pragma-req-withParamValue.yaml`
+    > proxy MUST pass through Pragma requests with param=value tokens
+
+4. `case_rfc2616_pragma-req-withSeveralTokens.yaml`
+    > proxy MUST pass through Pragma requests with several tokens
+
+5. `case_rfc2616_pragma-resp-withNocacheTokens.yaml`
+    > proxy MUST pass through Pragma responses with no-cache tokens
+
+6. `case_rfc2616_pragma-resp-withParamQuotedValue.yaml`
+    > proxy MUST pass through Pragma responses with param=quoted-value tokens
+
+7. `case_rfc2616_pragma-resp-withParamValue.yaml`
+    > proxy MUST pass through Pragma responses with param=value tokens
+
+8. `case_rfc2616_pragma-resp-withSeveralTokens.yaml`
+    > pragma response with several tokens ,can be through
 
 ##Range 
 1. `case_rfc2616_range-interval-invalid.yaml`
@@ -587,6 +725,23 @@
 
 9. `case_rfc2616_NoCache-UnKnowSC-590.yaml`
     > HTTP Protocol Unknow status code MUST NOT be cached: 590
+
+##Uncacheable-Methods
+1. `case_rfc2616_DELETE-request-notcache.yaml`
+    > cache MUST NOT cache response to DELETE request
+
+2. `case_rfc2616_OPTIONS-request-notcache.yaml`
+    > cache MUST NOT cache response to OPTIONS request
+
+3. `case_rfc2616_POST-request-notcache.yaml`
+    > cache MUST NOT cache response to POST request
+
+4. `case_rfc2616_PUT-request-notcache.yaml`
+    > cache MUST NOT cache response to PUT request
+
+5. `case_rfc2616_TRACE-request-notcache.yaml`
+    > cache MUST NOT cache response to TRACE request
+
 
 ##Vary
 1. `case_varyx1_MultiCopy_MisMathwith-X-Header.yaml`

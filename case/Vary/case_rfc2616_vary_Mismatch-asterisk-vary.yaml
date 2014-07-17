@@ -18,7 +18,7 @@
         X-b: vlaxom,
         X-c: vboyyckhfftnn,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
@@ -26,7 +26,7 @@
         X-a: v,
         X-b: vlaxom,
         X-c: vboyyckhfftnn,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -66,7 +66,7 @@
         X-b: vlaxom,
         X-c: vboyyckhfftnn,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,

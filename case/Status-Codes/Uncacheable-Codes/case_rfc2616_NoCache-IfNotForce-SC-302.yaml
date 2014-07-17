@@ -16,12 +16,12 @@
         uri: '/case_rfc2616_NoCache-IfNotForce-SC-302',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
         uri: '/case_rfc2616_NoCache-IfNotForce-SC-302',
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -29,7 +29,6 @@
         Cache-Control: public,
         content-length: 20,
         Last-Modified: now-31536000,
-        Expires: now + 31536000,
         Connection: close,
         body: content-20-123456789,
     },
@@ -49,7 +48,7 @@
         uri: '/case_rfc2616_NoCache-IfNotForce-SC-302',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: '/case_rfc2616_NoCache-IfNotForce-SC-302',

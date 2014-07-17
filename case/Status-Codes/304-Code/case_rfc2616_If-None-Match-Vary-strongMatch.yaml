@@ -17,13 +17,13 @@
         method: GET,
         uri: '/If-None-Match-Vary-strongMatch',
         protocol: HTTP/1.1,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         Connection: close,
     },
     ServerCheck: {
         method: GET,
         uri: '/If-None-Match-Vary-strongMatch',
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -62,7 +62,7 @@
         uri: '/If-None-Match-Vary-strongMatch',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ClientCheck: {
         protocol: HTTP/1.1,
@@ -91,7 +91,7 @@
         protocol: HTTP/1.1,
         If-None-Match: '"migxfsphro"',
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ClientCheck: {
         protocol: HTTP/1.1,

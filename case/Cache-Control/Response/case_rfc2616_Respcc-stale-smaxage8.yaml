@@ -21,7 +21,7 @@
         uri: '/Respcc-stale-smaxage=8',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: '/Respcc-stale-smaxage=8',
@@ -54,7 +54,7 @@
         Cache-Control: max-stale,
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: "exclude",
@@ -81,7 +81,7 @@
         Cache-Control: max-stale,
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: "exclude",
@@ -102,7 +102,7 @@
         uri: '/Respcc-stale-smaxage',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: "/Respcc-stale-smaxage",
@@ -111,7 +111,7 @@
         protocol: HTTP/1.1,
         statuscode: 200,
         Cache-Control: public,
-        Cache-Control: s-maxage = 8,
+        Cache-Control: s-maxage=8,
         Content-Length: 2,
         Last-Modified: now-31536000,
         Expires: now+31536000,
@@ -135,7 +135,7 @@
         uri: '/Respcc-stale-smaxage',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: "exclude",
@@ -150,7 +150,7 @@
 }  
 
 --- {
-    sleep: 10
+    sleep: 9
 }
 
 # step 6: sleep for 10sec, request again check whether it will revalidate the entity     
@@ -158,14 +158,12 @@
      Request: {
         method: GET,
         uri: '/Respcc-stale-smaxage',
-        Cache-Control: max-stale,
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: '/Respcc-stale-smaxage',
-        If-Modify-Since: now-31536000,
     }
 }
 

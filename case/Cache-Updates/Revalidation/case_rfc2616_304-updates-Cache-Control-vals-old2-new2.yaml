@@ -6,7 +6,7 @@
 # Testing Steps: 
 #     step 1: caching 
 #     step 2: whether cached 
-#     step 3: server check got INM and response 304 with 2 cache-control for updating cached 2 Cache-Control header 
+#     step 3: server check response 304 with 2 cache-control for updating cached 2 Cache-Control header
 # Author: wb-yinlu@taobao.com
 # -----------------------------------------------
 #
@@ -17,7 +17,7 @@
         uri: '/url-a',
         protocol: HTTP/1.1,
         New-Selector: abc,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         Connection: close,
     },
     ServerCheck: {
@@ -25,7 +25,7 @@
         uri: '/url-a',
         protocol: HTTP/1.1,
         New-Selector: abc,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -65,7 +65,7 @@
         protocol: HTTP/1.1,
         New-Selector: abc,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: EXCLUDE,
@@ -93,7 +93,7 @@
         uri: '/url-a',
         protocol: HTTP/1.1,
         New-Selector: bbc,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         Connection: close,
     },
     ServerCheck: {
@@ -101,7 +101,7 @@
         uri: '/url-a',
         protocol: HTTP/1.1,
         New-Selector: bbc,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,

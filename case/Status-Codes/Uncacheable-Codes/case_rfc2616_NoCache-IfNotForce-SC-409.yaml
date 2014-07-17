@@ -17,12 +17,12 @@
         uri: '/case_rfc2616_NoCache-IfNotForce-SC-409',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
         uri: '/case_rfc2616_NoCache-IfNotForce-SC-409',
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -54,7 +54,7 @@
         uri: '/case_rfc2616_NoCache-IfNotForce-SC-409',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         uri: '/case_rfc2616_NoCache-IfNotForce-SC-409',

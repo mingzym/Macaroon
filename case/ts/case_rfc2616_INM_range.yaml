@@ -16,12 +16,12 @@
         uri: '/qxymfhkfqxhh',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
         uri: '/qxymfhkfqxhh',
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -57,7 +57,7 @@
         uri: '/qxymfhkfqxhh',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ClientCheck: {
         protocol: HTTP/1.1,
@@ -80,7 +80,7 @@
         protocol: HTTP/1.1,
         Range: bytes=0-1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         If-None-Match: "F68ADB16DB4F1EF87D93D665CC1FFF54",

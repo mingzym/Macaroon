@@ -17,10 +17,55 @@
         uri: '/ifNoneMatch-400status',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "exclude",
+        Host: " ",
     },
     ClientCheck: {
         protocol: HTTP/1.1,
         statuscode: 400,
     }
+}
+
+#Step2: request with unspported Host and if-none-match,check status
+--- {
+    Request: {
+        method: GET,
+        uri: '/ifNoneMatch-400status',
+        protocol: HTTP/1.1,
+        Connection: close,
+        Host: "macaroon.alibaba.com",
+    },
+    Response: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        Cache-Control: public,
+        Content-Length: 20,
+        Last-Modified: now-31536000,
+        Connection: close,
+        body: content-20-123456789,
+        Etag: '"etag-abc"',
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 200,
+        content-length: 20,
+        Last-Modified: now-31536000,
+        Connection: close,
+        body: content-20-123456789,
+        Etag: '"etag-abc"',
+    },
+}
+#Verify If-Match is ignored when no host
+--- {
+     Request: {
+        method: GET,
+        uri: '/ifNoneMatch-400status',
+        protocol: HTTP/1.1,
+        Connection: close,
+        Host: " ",
+        If-None-Match: '"etag-abc"'
+    },
+    ClientCheck: {
+        protocol: HTTP/1.1,
+        statuscode: 400,
+    },
 }

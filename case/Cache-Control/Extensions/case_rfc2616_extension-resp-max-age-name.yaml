@@ -1,20 +1,20 @@
 # ------------------------------------------------
 # Case Name:
-#       case_rfc2616_ccExtension-resp-max-age-name
+#       case_rfc2616_extension-resp-max-age-name
 # Case Description:
-#       cache MUST ignore max-age=5 in the name of key=value extension response cache-directive
+#       cache MUST ignore max-age=5 in the name of key=value extension response
 # Testing Steps:
-#       step 1: check whether cache MUST ignore max-age=5 in the name of key=value extension response cache-directive
+#       step 1: check whether cache MUST ignore max-age=5 in the name of key=value extension response
 # Author: qihai.qh@alibaba-inc.com
 # -----------------------------------------------
-# check whether cache MUST ignore max-age=5 in the name of key=value extension response cache-directive
+# check whether cache MUST ignore max-age=5 in the name of key=value extension response
 --- {
     Request: {
         method: GET,
         uri: '/ccExtension-resp-max-age-name',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
 
     },
     ServerCheck: {

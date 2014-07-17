@@ -1,8 +1,8 @@
 # ------------------------------------------------
 # Case Name:
-#       case_rfc2616_ccExtension-resp-key=value
+#       case_rfc2616_extension-resp-key=value
 # Case Description:
-#       cache MUST ignore cache-control key=value extension response cache-directive
+#       cache MUST ignore cache-control key=value extension response
 # Testing Steps:
 #       step 1: check whether cache ignore key=value
 # Author: qihai.qh@alibaba-inc.com
@@ -14,7 +14,7 @@
         uri: '/ccExtension-resp-key=value',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
 
     },
     ServerCheck: {

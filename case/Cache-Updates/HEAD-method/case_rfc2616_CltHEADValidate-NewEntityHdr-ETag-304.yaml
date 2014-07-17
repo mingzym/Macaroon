@@ -57,7 +57,7 @@
     ClientCheck: {
         protocol: HTTP/1.1,
         statuscode: 200,
-       Cache-Control: 'public,max-age=2',
+        Cache-Control: 'public,max-age=2',
         Last-Modified: now-86150,
         Date: S_Date_Step1,
         Expires: now+86150,
@@ -105,10 +105,14 @@
         Date: S_Date_Step3,
         Expires: now+86150,
         ETag: '"tag-Ilx+otjuqRHWyFrGTzcsOA=="',
-        Content-Length: 20,
-        Age: 0,
+        Content-Length: 0,
     }
 }
+
+--- {
+    sleep: 1
+}
+
 # step 4: checking whether previous uncachable HEAD purged the object 
 
 --- {
@@ -116,6 +120,7 @@
         method: GET,
         uri: '/case_rfc2616_CltHEADValidate-NewEntityHdr-Etag-304',
         protocol: HTTP/1.1,
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
@@ -137,11 +142,10 @@
         statuscode: 200,
         Cache-Control: public,
         Last-Modified: now-86150,
-        Date: S_Date_Step3,
+        Date: S_Date_Step4,
         Expires: now+86150,
         ETag: '"tag-Ilx+otjuqRHWyFrGTzcsOA=="',
         Content-Length: 20,
-        Age: '>=0',
         body: content-20-123456789,
     }
 }

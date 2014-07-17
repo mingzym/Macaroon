@@ -16,7 +16,7 @@
         uri: '/bodyIncomplete-noCached',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -47,13 +47,13 @@
         uri: '/bodyIncomplete-noCached',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: HEAD,
         protocol: HTTP/1.1,
         uri: '/bodyIncomplete-noCached',
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -68,7 +68,6 @@
         protocol: HTTP/1.1,
         statuscode: 200,
         Date: D_Date_Step2,
-        Age: 0,
         Connection: close,
     }
 }

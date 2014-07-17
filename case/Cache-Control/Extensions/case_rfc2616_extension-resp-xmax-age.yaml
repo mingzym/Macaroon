@@ -1,30 +1,30 @@
 # ------------------------------------------------
 # Case Name:
-#       case_rfc2616_ccExtension-req-xmax-age
+#       case_rfc2616_extension-resp-xmax-age
 # Case Description:
-#       cache MUST ignore xmax-age extension request cache-directive
+#       cache MUST ignore xmax-age extension response
 # Testing Steps:
-#       step 1: check whether cache MUST ignore xmax-age extension request cache-directive
+#       step 1: check whether cache MUST ignore xmax-age extension response
 # Author: qihai.qh@alibaba-inc.com
 # -----------------------------------------------
-# check whether cache MUST ignore xmax-age extension request cache-directive
+# check whether cache MUST ignore xmax-age extension response
 --- {
     Request: {
         method: GET,
-        uri: '/ccExtension-req-xmax-age',
+        uri: '/ccExtension-resp-xmax-age',
         protocol: HTTP/1.1,
-        Cache-Control: xmax-age=10,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
 
     },
     ServerCheck: {
-        uri: '/ccExtension-req-xmax-age',
+        uri: '/ccExtension-resp-xmax-age',
     },
     Response: {
         protocol: HTTP/1.1,
         statuscode: 200,
         Content-Length: 11,
+        Cache-Control: xmax-age=10,
         Connection: close,
         body: xmax-age=10
 

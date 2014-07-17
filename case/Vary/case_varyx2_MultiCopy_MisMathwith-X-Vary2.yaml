@@ -19,7 +19,7 @@
         X-Varytwo: two,
         X-Varythr: three,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
@@ -27,7 +27,7 @@
         X-Varyone: one,
         X-Varytwo: two,
         X-Varythr: three,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -64,7 +64,7 @@
         X-Varytwo: two,
         X-Varythr: three,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ClientCheck: {
         protocol: HTTP/1.1,
@@ -90,7 +90,7 @@
         X-Varytwo: twotwo,
         X-Varythr: threethree,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,

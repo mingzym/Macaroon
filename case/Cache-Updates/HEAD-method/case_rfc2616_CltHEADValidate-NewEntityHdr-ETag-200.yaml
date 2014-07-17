@@ -19,7 +19,7 @@
         method: GET,
         uri: '/case_rfc2616_CltHEADValidate-NewEntityHdr-Etag-200',
         protocol: HTTP/1.1,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
@@ -106,7 +106,6 @@
         Expires: now+86150,
         ETag: '"tag-+HCgqJeRSFqCdo18N+oSsw=="',
         Content-Length: 20,
-        Age: 0,
     }
 }
 # step 4: checking whether previous uncachable HEAD purged the object, expect cached
@@ -141,7 +140,6 @@
         Expires: now+86150,
         ETag: '"tag-+HCgqJeRSFqCdo18N+oSsw=="',
         Content-Length: 20,
-        Age: '>=0',
         body: content-20-123456789,
     }
 }

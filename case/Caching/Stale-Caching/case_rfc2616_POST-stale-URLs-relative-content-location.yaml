@@ -17,12 +17,12 @@
         uri: '/url-a',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     ServerCheck: {
         method: GET,
         uri: '/url-a',
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
     Response: {
         protocol: HTTP/1.1,
@@ -51,7 +51,7 @@
         uri: '/url-a',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
    ServerCheck: {
         uri: EXCLUDE,
@@ -72,13 +72,13 @@
         uri: '/posturl',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         body: request_body-aaaaaaaaab,
     },
  ServerCheck: {
         method: POST,
         uri: '/posturl',
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
         Content-Length: 23,
         body: request_body-aaaaaaaaab,
      
@@ -109,7 +109,7 @@
         uri: '/url-a',
         protocol: HTTP/1.1,
         Connection: close,
-        Host: "macaroon.zymlinux.net",
+        Host: "macaroon.alibaba.com",
     },
    ServerCheck: {
         uri: '/url-a',
